@@ -18,6 +18,7 @@ echo PostController::staticShow(2) . $nl;
 
 //instantiate db connection
 $pdo = new PDO('mysql:host=localhost;dbname=project-impossible', 'root', 'Admin_123');
+
 /*create new user but we need to 
 call the save() method after setting values
 */
@@ -28,5 +29,22 @@ $user->setPassword('secret2');
 
 //fetch all user from db users table
 $allUsers = $user::findAll($pdo);
-echo($allUsers[1]['email']);
+echo($allUsers[1]['email']) .$nl;
+
+
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+// Get the server name
+$serverName = $_SERVER['SERVER_NAME'];
+
+// Get the server port, if it's not the default port (80 for HTTP, 443 for HTTPS)
+$port = $_SERVER['SERVER_PORT'];
+$port = ($port == 80 || $port == 443) ? '' : ':' . $port;
+
+// Construct the URI
+$uri = $protocol . $serverName . $port;
+
+// Output the URI
+echo $uri . $nl;
+//var_dump($_SERVER['SERVER_PORT'] == 443 );
 
