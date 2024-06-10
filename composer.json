@@ -1,0 +1,19 @@
+{
+  "name": "project/impossible",
+  "description": "simple php",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Project\\Impossible\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "marlontamo",
+      "email": "marlontamo2@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}
